@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ accordion card</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+   <div class="container">
+       <div class="image-container"> <!-- div na wszystkie obrazy -->
+           <div class="inner"> <!--- div na obraz glowny + cien -->
+                <picture> <!-- ten kod wyswietli obrazek mobile gdy szerokosc ekranu bedzie <= 890px, 
+                    a jezeli wieksza to wyswietli wersje desktop-->
+                    <source srcset="illustration-woman-online-mobile.svg" media="(max-width:890px)">
+                    <img src="illustration-woman-online-desktop.svg" alt="">
+                </picture>
+
+                <picture> <!-- to samo co wyzej, inny obraz-->
+                    <source srcset="bg-pattern-mobile.svg" media="(max-width:890px)">
+                    <img class="sec-img" src="bg-pattern-desktop.svg" alt="">
+                </picture>
+           </div>
+
+           <div class="outer"> <!-- div na pudełko z @ -->
+            <img src="illustration-box-desktop.svg" alt="">
+           </div>
+
+           <div class="faq-container">
+            <h2>FAQ</h2>
+            <div class="faq-one">
+                <input type="checkbox" id="ques-one">
+                <label for="ques-one">How many team members can I invite?<span><img src="icon-arrow-down.svg" alt=""> </span></label>
+                <div class="content">
+                    You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.
+                </div>
+            </div>
+
+            <div class="faq-two">
+                <input type="checkbox" id="ques-two">
+                <label for="ques-two">What is the maximum file upload size?<span><img src="icon-arrow-down.svg" alt=""> </span></label>
+                <div class="content">
+                    No more than 2GB. All files in your account must fit your allotted storage space.
+                </div>
+            </div>
+
+            <div class="faq-three">
+                <input type="checkbox" id="ques-three">
+                <label for="ques-three">How do I reset my password?<span><img src="icon-arrow-down.svg" alt=""> </span></label>
+                <div class="content">
+                    Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.
+                </div>
+            </div>
+
+            <div class="faq-four">
+                <input type="checkbox" id="ques-four">
+                <label for="ques-four">Can I cancel my subscription?<span><img src="icon-arrow-down.svg" alt=""></span></label>
+                <div class="content">
+                    Yes! Send us a message and we’ll process your request no questions asked.
+                </div>
+            </div>
+
+            <div class="faq-five">
+                <input type="checkbox" id="ques-five">
+                <label for="ques-five">Do you provide additional support?<span><img src="icon-arrow-down.svg" alt=""> </span></label>
+                <div class="content">
+                    Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                </div>
+            </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
