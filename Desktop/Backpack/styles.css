@@ -62,7 +62,7 @@ ul {
     color: rgb(12, 12, 39);
     background-color:rgba(230, 255, 255,0.2);
 }
-nav ul{
+ ul{
     max-height: 60vh;
     min-height: 2em;
     overflow:hidden; 
