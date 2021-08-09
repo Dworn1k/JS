@@ -61,9 +61,7 @@ ul {
     border-radius: 5px;
     color: rgb(12, 12, 39);
     background-color:rgba(230, 255, 255,0.2);
-}
- ul{
-    max-height: 60vh;
+    max-height: 30vh;
     min-height: 2em;
     overflow:hidden; 
     overflow-y:scroll;
