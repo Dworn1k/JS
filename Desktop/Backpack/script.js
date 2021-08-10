@@ -46,11 +46,38 @@ function onButtonSubmit(){
     else createElement("div","list2");
 }
 
+var i=0;
+var j=0;
+
 function createElement(tag,parent){
     var node=document.createElement(tag);
     var textnode=document.createTextNode(item.value);
     node.appendChild(textnode);
     document.getElementById(parent).appendChild(node);
+    
+    let box=document.createElement("input");
+    box.type="checkbox";
+    box.className="checkboxes";
+    node.appendChild(box);
+
+    if(tag==="li"){
+        node.id=tag+i;
+        box.id=tag+"Box"+i;
+        i++;
+    }else {
+        node.id=tag+j;
+        box.id=tag+"Box"+j;
+        j++;
+    }
+    
+   box.addEventListener('change',()=>{
+        if(this.checked){
+            console.log("checkbox"+box.id+"is checked");
+        }
+        
+    })
+    
+
     document.getElementById("item").value=null;
 }
-
+    
