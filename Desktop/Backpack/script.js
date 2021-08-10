@@ -71,13 +71,15 @@ function createElement(tag,parent){
     }
     
    box.addEventListener('change',()=>{
-        if(this.checked){
-            console.log("checkbox"+box.id+"is checked");
+        if(box.checked){
+            document.getElementById(node.id).style.textDecoration="line-through";
+        }
+        else{
+            document.getElementById(node.id).style.textDecoration="none";
         }
         
     })
     
-
     document.getElementById("item").value=null;
 }
     
