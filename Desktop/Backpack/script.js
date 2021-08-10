@@ -38,6 +38,7 @@ function addToSecond(){
 }
 */
 document.getElementById("btn").addEventListener('click', onButtonSubmit);
+document.getElementById("percentage").innerHTML="0 % PACKED";
 
 function onButtonSubmit(){
     var item=document.getElementById("item").value;
@@ -48,6 +49,9 @@ function onButtonSubmit(){
 
 var i=0;
 var j=0;
+var howManyChecked=0;
+var howManyItems=0;
+var percentagePacked;
 
 function createElement(tag,parent){
     var node=document.createElement(tag);
@@ -64,22 +68,32 @@ function createElement(tag,parent){
         node.id=tag+i;
         box.id=tag+"Box"+i;
         i++;
+        howManyItems++;
+        console.log("total items: "+howManyItems);
     }else {
         node.id=tag+j;
         box.id=tag+"Box"+j;
         j++;
+        howManyItems++;
+        console.log("total items: "+howManyItems);
     }
     
    box.addEventListener('change',()=>{
         if(box.checked){
             document.getElementById(node.id).style.textDecoration="line-through";
+            howManyChecked++;
+            console.log("howManyChecked="+howManyChecked);
+            percentagePacked=(howManyChecked*100)/howManyItems;
+            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED"
         }
         else{
             document.getElementById(node.id).style.textDecoration="none";
+            howManyChecked--;
+            console.log("howManyChecked="+howManyChecked);
+            percentagePacked=(howManyChecked*100)/howManyItems;
+            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED"
         }
-        
     })
-    
+
     document.getElementById("item").value=null;
 }
-    
