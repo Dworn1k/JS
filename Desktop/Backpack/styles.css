@@ -77,7 +77,7 @@ ul {
     border-radius: 5px;
     color: rgb(12, 12, 39);
     background-color:rgba(230, 255, 255,0.2);
-    max-height: 25vh;
+    max-height: 60vh;
     min-height: 2em;
     overflow:hidden; 
     overflow-y:scroll;
@@ -86,10 +86,22 @@ ul {
 #percentage{
     border: solid 2px rgba(12, 12, 39,0.3);
     height: 3rem;
-    padding: 10px;
+    padding: 5px;
     margin: 50px 100px;
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
     text-align: center;
+}
+
+input.checkboxes {
+    width: 20px;
+    float: right;
+    margin-right: 20px;
+}
+
+
+#deleteButtons{
+    position: relative;
+    float: right;
 }
