@@ -21,7 +21,7 @@ body {
     display: flex;
     float: right;
     width: 50%;
-    height: 100vh;
+    height: 150vh;
 }
 
 .backpack{
@@ -100,8 +100,26 @@ input.checkboxes {
     margin-right: 20px;
 }
 
+progress[value]{
+
+    width: 410px;
+    margin: 0px;
+    display: flex;
+}
+
+progress:not([value]) {
+    width: 410px;
+    margin: 0px;
+    display: flex;
+ }
 
 #deleteButtons{
     position: relative;
     float: right;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

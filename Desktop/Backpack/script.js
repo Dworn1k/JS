@@ -1,4 +1,3 @@
-
 //document.getElementById("btn").addEventListener('click', addElement);
 
 
@@ -20,7 +19,6 @@
     else if (item.length<=3) addToSecond();
     else addToFirst();
 }
-
 function addToFirst(){
     var node = document.createElement("LI");
     var textnode = document.createTextNode(item.value);
@@ -28,7 +26,6 @@ function addToFirst(){
     document.getElementById("myList").appendChild(node);
     document.getElementById("item").value=null;
 }
-
 function addToSecond(){
     var node=document.createElement("div");
     var textnode=document.createTextNode(item.value);
@@ -58,6 +55,13 @@ function createElement(tag,parent){
     var textnode=document.createTextNode(item.value);
     node.appendChild(textnode);
     document.getElementById(parent).appendChild(node);
+
+    let deleteButton=document.createElement("button");
+    deleteButton.type="button";
+    deleteButton.className="deleteButtons";
+    deleteButton.innerHTML="Delete";
+    node.appendChild(deleteButton);
+
     
     let box=document.createElement("input");
     box.type="checkbox";
@@ -84,15 +88,29 @@ function createElement(tag,parent){
             howManyChecked++;
             console.log("howManyChecked="+howManyChecked);
             percentagePacked=(howManyChecked*100)/howManyItems;
-            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED"
+            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED";
         }
         else{
             document.getElementById(node.id).style.textDecoration="none";
             howManyChecked--;
             console.log("howManyChecked="+howManyChecked);
             percentagePacked=(howManyChecked*100)/howManyItems;
-            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED"
+            document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED";
         }
+    })
+
+    deleteButton.addEventListener('click',() =>{
+        var itemToRemove=document.getElementById(node.id);
+        howManyItems--;
+        if (box.checked=true){
+            howManyChecked--;
+        }
+        itemToRemove.remove(node);
+        percentagePacked=(howManyChecked*100)/howManyItems;
+        document.getElementById("percentage").innerHTML=Math.round(percentagePacked)+"% PACKED";
+        console.log("howManyItems: "+howManyItems);
+        console.log("howManyChecked: "+howManyChecked);
+        console.log("Percentage Packed: "+percentagePacked);
     })
 
     document.getElementById("item").value=null;

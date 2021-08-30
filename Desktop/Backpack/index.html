@@ -8,7 +8,7 @@
     <link href="styles.css" rel="stylesheet">
     <script src="script2.js" defer></script>
 </head>
-<body>
+<body onload="percentageDisplay()">
     <div class="column1">
         <div class="backpack">
             <form class="add_item_section">
@@ -23,7 +23,13 @@
         </div>
     </div>
     <div class="column2">
-        <div id="percentage"></div>
+        <div id="percentage">
+            <div id=percentageTxt></div>
+            <div>
+                <progress id="progressBar" max="100"></progress>
+            </div>
+            
+        </div>
     </div>
 </body>
 </html>
